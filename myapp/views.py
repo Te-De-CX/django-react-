@@ -15,7 +15,7 @@ def signIn(request):
     
     if request.method == "POST":
         if password == passwordagain:
-            if User.objects.filter(email=email).exists():
+            if User.objects.filter (email=email).exists():
                 messages.info(request,"Email ALready exists")
                 return redirect("signIn")
             elif User.objects.filter(username = username).exists():
